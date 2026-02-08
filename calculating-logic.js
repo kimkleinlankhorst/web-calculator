@@ -13,12 +13,19 @@ for (let i = 0; i < btnNodeList.length; i++) {
     btnNodeList[i].onclick = () => {
         const pressedButton = btnNodeList[i].textContent;
         display.textContent += pressedButton;
+        const isOperator = opInput.includes(pressedButton);
 
         if (pressedButton === "=") {
-            let total = calculate(numA, numB, operator);
+            let total = operate(numA, numB, operator);
             display.textContent = total;
             clearInputs(total);
-        } else if (opInput.includes(pressedButton)) {
+        } else if (isOperator && operator !== "") {
+            let total = operate(numA, numB, operator);
+            display.textContent = total;
+            clearInputs(total);
+            operator = pressedButton;
+            display.textContent += pressedButton;
+        } else if (isOperator) {
             firstNumComplete = true;
             operator = pressedButton;
         } else {
@@ -38,7 +45,7 @@ for (let i = 0; i < btnNodeList.length; i++) {
 }
 
 // Make the calculations
-function calculate(a, b, op) {
+function operate(a, b, op) {
     switch (op) {
         case "+":
             return Number(a) + Number(b);
