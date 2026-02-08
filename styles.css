@@ -4,3 +4,34 @@ body {
     flex-wrap: wrap;
     align-content: center;
 }
+
+.calculator-container {
+    gap: 5px;
+}
+
+.display {
+    height: 15px;
+    border-color: darkgray;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    padding: 15px;
+}
+
+.operations {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.numbers {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    padding-inline: 14px;
+    padding-block: 8px;
+    ;
+    margin: 2px;
+}

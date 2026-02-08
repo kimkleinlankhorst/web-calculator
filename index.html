@@ -13,14 +13,30 @@
     <body>
         <h1>KIM'S CALCULATOR</h1>
         <div class="calculator-container">
-            <div class="display">0</div>
+            <div class="display"> </div>
 
             <div class="operations">
                 <button>+</button>
                 <button>-</button>
                 <button>×</button>
                 <button>÷</button>
+                <button>=</button>
             </div>
+
+
+
+            <script>
+                // Create buttons 0 till 9
+                const calculatorDiv = document.querySelector(".calculator-container")
+                const numberDiv = document.createElement("div");
+                numberDiv.classList.add("numbers");
+                for (let i = 0; i < 10; i++) {
+                    const button = document.createElement("button");
+                    button.textContent = i;
+                    numberDiv.appendChild(button);
+                }
+                calculatorDiv.appendChild(numberDiv);
+            </script>
 
         </div>
     </body>
